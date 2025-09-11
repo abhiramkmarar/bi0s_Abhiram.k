@@ -1,0 +1,116 @@
+level 0
+ls -alps
+cat readme
+pass=ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+leve 1
+ls -alps
+cat ./-
+pass=263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+level2
+ls-alps
+cat ./--spaces\ in\ this\ filename --
+pass=MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+level 3
+ls
+cd inhere
+cat ..Hiding-from-you
+pass=2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+level4
+ls
+cd inhere
+check all the files
+cd ./-file07
+cat ./-file07
+pass=4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+level5
+ls
+find . -type f -size 1033c ! -executable
+ cat ./inhere/maybehere07/.file2
+ pass=HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+
+level6
+find / -type f -user bandit7 -group bandit6 -size 33c
+cat /var/lib/dpkg/info/bandit7.password
+pass=morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+
+level7
+ls -alps
+strings data.txt | grep "millionth"
+pass=dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+
+level8
+sort data.txt | uniq -c
+pass= 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+
+level9
+sort data.txt | grep "="
+pass=FGUW5iILVJrxX9kMYMm1N4MgbpfMiqey
+
+
+level10
+base64 -d data.txt
+pass=dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+level11
+cat data.txt
+rotet13
+pass=7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+level12
+using gzip -d
+using tar xf
+bzip2 -d
+pass=FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+level13/14
+
+ssh -i sshkey.private -p 2220 bandit14@localhost
+cat /etc/bandit_pass/bandit14
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+nc localhost 30000
+corrected pass=8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+
+level 15
+cat /etc/bandit_pass/bandit15
+man ncat | grep ssl
+pass=kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+
+level16
+cat /etc/bandit_pass/bandit16
+nmap localhost -p 31000-32000
+nc localhost 31790
+ncat --ssl localhost 31790
+
+level17
+vim key
+chmod 400 key
+ssh -i  key bandit17@bandit.labs.overthewire.org -p 2220
+diff passwords.old passwords.new
+pass= kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+
+level18
+man ssh | grep shell
+ssh -t bandit18@bandit.labs.overthewire.org -p 2220/bin/sh
+
+ls
+cat readme
+pass = IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+
+level19
+ls
+./bandit20-do cat /etc/bandit_pass/bandit20
+pass=GbKksEFF4yrVs6i155v6gaY5aVje50j
+
