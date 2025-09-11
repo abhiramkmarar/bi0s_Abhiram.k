@@ -1,15 +1,16 @@
-s = "535ed.35'fc3434'5';"
-chars = list(s)               # Convert string to list to allow modification
-left, right = 0, len(chars) - 1  # Initialize pointers at start and end
+str_user=input('ENTER THE STRING:')
+    alpha=[]
+    for i in str_user:
+        if i.isalpha():
+            alpha.append(i)
+    alpha.reverse()
+    alpha_index=0
+    reversed_str=''
 
-while left < right:
-    if not chars[left].isalpha():
-        left += 1            # Skip non-alphabet on left side
-    elif not chars[right].isalpha():
-        right -= 1           # Skip non-alphabet on right side
-    else:
-        chars[left], chars[right] = chars[right], chars[left]  # Swap alphabets
-        left += 1            # Move both pointers inward
-        right -= 1
-
-print("".join(chars))         # Join the list back into a string and print
+    for i in range(len(str_user)):
+        if str_user[i].isalpha():
+            reversed_str=reversed_str+str(alpha[alpha_index])
+            alpha_index=alpha_index+1
+        else:
+            reversed_str=reversed_str+str_user[i]
+    print('ALPHABETICALLY REVERSED STRING:',reversed_str)
