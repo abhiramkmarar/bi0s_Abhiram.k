@@ -23,6 +23,7 @@ if (!isset($_SESSION['user_id'])) {
     
     if ($_SESSION['role'] == 'admin') {
         echo " | <a href='admin.php'>Admin Dashboard</a>";
+    '''yet to make admin page'''
     }
 }
 ?>
