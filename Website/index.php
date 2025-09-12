@@ -18,8 +18,8 @@ if (!isset($_SESSION['user_id'])) {
 } else {
 
     echo "Welcome, " . $_SESSION['username'] . "! ";
-    echo "<a href='profile.php'>Profile</a> | <a href='logout.php'>Logout</a>";
-
+    echo "<a href='profile_page.php'>Profile</a> | <a href='logout.php'>Logout</a>";
+'''yet to create a profile_page.php '''
     
     if ($_SESSION['role'] == 'admin') {
         echo " | <a href='admin.php'>Admin Dashboard</a>";
