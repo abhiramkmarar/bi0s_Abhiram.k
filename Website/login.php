@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         header("Location: index.php");
     } else {
-        echo "❌ Invalid email or password";
+        echo "X Invalid email or password";
     }
 }
 ?>
