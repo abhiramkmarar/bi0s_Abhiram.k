@@ -9,6 +9,6 @@ for i in word_2.lower():
 letters_1.sort()
 letters_2.sort()
 if letters_1 == letters_2:
-    return True
+    print(" True")
 else:
-    return False
+    print(" False")
