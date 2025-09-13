@@ -80,7 +80,8 @@ corrected pass=8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 
 level 15
 cat /etc/bandit_pass/bandit15
-man ncat | grep ssl
+man ncat
+ncat --ssl localhost -p 30001
 pass=kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 -
 
