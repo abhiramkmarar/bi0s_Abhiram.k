@@ -59,6 +59,7 @@ pass=dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 -
 level11
 cat data.txt
+echo "password" | rot13
 use cyberchef to decode rot13
 pass=7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 -
