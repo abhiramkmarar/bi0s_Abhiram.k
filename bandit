@@ -75,7 +75,7 @@ ssh bandit14@localhost
 cat /etc/bandit_pass/bandit14 -i sshkey.private 
 MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 nc localhost 30000
-
+corrected pass=8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 -
 
 level 15
