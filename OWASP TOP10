@@ -1,0 +1,38 @@
+1. broken access control  
+users gain access to things they should not  
+e: a normal user can open /admin page  
+
+2. cryptographic failures  
+sensitive data is exposed due to weak or missing encryption  
+e: passwords stored in plain text in database  
+
+3. injection  
+untrusted input runs as code or queries in the system  
+e: ' OR 1=1 -- lets attacker get all items in database  
+
+4. insecure design  
+flaws in the app’s architecture create security risks  
+e: no limit on login attempts allows brute force  
+
+5. security misconfiguration  
+unsafe default settings or poorly set up servers  
+  
+
+6. vulnerable and outdated components  
+old libraries or software with known holes  
+ 
+
+7. identification and authentication failures  
+weak login or session handling  
+  
+
+8. software and data integrity failures  
+code or data can be tampered with  
+e: app downloads update over http not https  
+
+9. security logging and monitoring failures  
+attacks go undetected due to poor logging  
+e: brute force login not recorded anywhere  
+
+10. server-side request forgery (ssrf)  
+    
