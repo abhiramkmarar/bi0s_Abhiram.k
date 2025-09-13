@@ -9,8 +9,9 @@ str_user=input('ENTER THE STRING:')
 
     for i in range(len(str_user)):
         if str_user[i].isalpha():
-            reversed_str=reversed_str+str(alpha[alpha_index])
-            alpha_index=alpha_index+1
+            reversed_str+= str(alpha[alpha_index])
+            alpha_index += 1
         else:
-            reversed_str=reversed_str+str_user[i]
+            reversed_str += str_user[i]
     print('ALPHABETICALLY REVERSED STRING:',reversed_str)
+
