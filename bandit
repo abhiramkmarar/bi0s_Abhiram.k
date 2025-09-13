@@ -71,7 +71,7 @@ pass=FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 -
 level13/14
 
-ssh -i sshkey.private -p 2220 bandit14@localhost
+ssh -i sshkey.private bandit14@localhost
 cat /etc/bandit_pass/bandit14
 MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 nc localhost 30000
