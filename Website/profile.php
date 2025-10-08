@@ -48,7 +48,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h2> Welcome <?php echo htmlspecialchars($user['username']); ?> !</h2>
     <p> Your role is :<b> <?php echo htmlspecialchars($user{'role']);?> </b></p>
     <a href="logout.php">Logout</a>
+<?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+    <br><br>
+    <a href="admin_dashboard.php">Go to Admin Dashboard</a>
+    <?php endif; ?>
+
+    <hr>
+    <h3>Update Profile Information</h3>
     <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
     <?php if ((isset($success)) echo "<p style='color:green;'>$success</p>"; ?>
-    
+    <form action="user_dashboard.php" method="post">
+        Username: <input type="text" name="new_username" value="<?php echo htmlspecialchars($user['username']); ?>" required><br><br>
+        Email: <input type="email" name="new_email" value="<?php echo htmlspecialchars($user['email']); ?>" required><br><br>
+        <button type="submit" name="update_profile">Update Profile</button>
+    </form>
+
+     <hr>
+
+    <h3>Change Password</h3>
+    <form action="user_dashboard.php" method="post">
+        New Password: <input type="password" name="new_password" required><br><br>
+        <button type="submit" name="update_password">Change Password</button>
+    </form>
+
+    <hr>
+
+</body>
+</html>
     
