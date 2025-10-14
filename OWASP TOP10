@@ -1,29 +1,64 @@
-1. broken access control  
-users gain access to things they should not  
-e: a normal user can open /admin page  
+OWASP (Open Web Application Security Project)
+OWASP Top 10 lists the most common and critical web application vulnerabilities based on real-world data
 
-2. cryptographic failures  
-sensitive data is exposed due to weak or missing encryption  
-e: passwords stored in plain text in database  
 
-3. injection  
-untrusted input runs as code or queries in the system  
-e: ' OR 1=1 -- lets attacker get all items in database  
+1.Broken access control
+ users gain un-intended permissions
+ eg: Accessing /admin
 
-4. insecure design  
-flaws in the app’s architecture create security risks  
-e: no limit on login attempts allows brute force  
+solution:
+ before deleting a record, verify the logged-in user is allowed to delete that resource.
+ create explicit "allow" rules for all legitimate traffic, users, and actions
 
-5. security misconfiguration  
-unsafe default settings or poorly set up servers  
-  
 
-6. vulnerable and outdated components  
-old libraries or software with known holes  
+2.Cryptographic Failures
+  sensitive data is exposed/not securely transferred 
+
+solution:
+  use https  
+  use algorithms like AES-256 for data encryption
+  do not use MD5, SHA1
+
+3.Injection
+  Malicious input is sent to a database or command interpreter, tricking it into executing unintended commands.
+
+solution:
+  use prepared statements
+  confirm that each input matches the expected format (e.g., a valid email like user@domain.com)
+  give your application’s database account only the access needed (SELECT, INSERT, UPDATE, DELETE)—never higher-level permissions like DROP or ALTER.
+
+4.Insecure Design
+  The app is insecure from the design stage
+
+solution:
+  before coding, map out “what can go wrong?”
+  automatically invalidate sessions after inactivity.
+
+5.Security Misconfiguration
+  Systems are insecure due to default or incorrect configurations.
+
+solution:
+  Disable unused features and services
+  Use automated tools to scan for misconfigurations and vulnerabilities
+**Content-Security-Policy (CSP): This header restricts which sources (scripts, styles, images) the browser can load, blocking most Cross-Site Scripting (XSS) and data injection attacks. Example:
+Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.com;
+
+6.Vulnerable and Outdated Components
+  Using old frameworks, libraries, or dependencies with known vulnerabilities.
+
+solution:
+  Know what libraries, versions, and plugins you’re using.
+  use dependabot(for GitHub) to analuze your proj. dependencies for known vulnerabilities
+
+
+7.Identification and Authentication Failures
+  Weak or poorly implemented login and session management.
+
+solution:
+  Use Strong Password Policies  
+  MFA
+  hash passwords
  
-
-7. identification and authentication failures  
-weak login or session handling  
   
 
 8. software and data integrity failures  
@@ -35,4 +70,4 @@ attacks go undetected due to poor logging
 e: brute force login not recorded anywhere  
 
 10. server-side request forgery (ssrf)  
-    
+    Application fetches URLs based on user input without validation, letting attackers trick it into accessing internal systems.
