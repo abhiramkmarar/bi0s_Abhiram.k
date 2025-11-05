@@ -2,13 +2,13 @@
 session_start();
 include 'db.php';
 
-// Only allow admin users
+// admin
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit;
 }
 
-// Handle delete request
+// for delete
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     $delete_id = intval($_POST['delete_id']);
     
@@ -18,14 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
         if ($query->execute()) {
             $message = " User with ID $delete_id deleted successfully.";
         } else {
-            $message = " Error deleting user.";
+            $message = " Error";
         }
     } else {
         $message = " Invalid user ID.";
     }
 }
 
-// Fetch all users
+//all users
 $result = $conn->query("SELECT id, username, email, role FROM users");
 ?>
 
