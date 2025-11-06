@@ -40,7 +40,7 @@ $result = $conn->query("SELECT id, username, email, role FROM users");
 </head>
 <body>
     <h2>Manage Users (Admin Only)</h2>
-    <a href="user_dashboard.php">⬅ Back to Dashboard</a><br><br>
+    <a href="user_dashboard.php">"<-" Back to Dashboard</a><br><br>
 
     <?php if (isset($message)) echo "<p style='color:green;'>$message</p>"; ?>
 
