@@ -22,7 +22,7 @@ if (!isset($_SESSION['user_id'])) {
 
     // If the logged-in user is an admin
     if ($_SESSION['role'] == 'admin') {
-        echo " | <a href='admin.php'>Admin Dashboard</a>";
+        echo " | <a href='manage_users.php'>Admin Dashboard</a>";
     }
 }
 ?>
