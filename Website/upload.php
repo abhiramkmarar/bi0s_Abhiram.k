@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-// Optional: only allow logged-in users
+
 if (!isset($_SESSION['user_id'])) {
     die("Access denied. Please log in first.");
 }
 
-$targetDir = "uploads/"; // make sure this folder exists (create it if not)
+$targetDir = "uploads/"; 
 if (!is_dir($targetDir)) {
     mkdir($targetDir, 0777, true);
 }
@@ -15,13 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['uploaded_file'])) {
     $fileName = basename($_FILES['uploaded_file']['name']);
     $targetFile = $targetDir . $fileName;
 
-    // Limit file size (2MB)
+    // Limit (2MB)
     if ($_FILES['uploaded_file']['size'] > 2 * 1024 * 1024) {
         die("Error: File too large. Max size is 2MB.");
     }
 
-    // Allow only safe extensions
-    $allowed = ['jpg', 'png', 'pdf', 'txt'];
+    //safe extensions
+    $allowed = ['jpg', 'jpeg', 'png', 'pdf', 'txt'];
     $ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
     if (!in_array($ext, $allowed)) {
         die("Error: Only JPG, PNG, PDF, and TXT files allowed.");
