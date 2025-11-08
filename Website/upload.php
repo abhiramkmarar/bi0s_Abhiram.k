@@ -36,4 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['uploaded_file'])) {
 } else {
     echo "No file uploaded.";
 }
+
+<a href='profile.php'>Profile</a> 
 ?>
