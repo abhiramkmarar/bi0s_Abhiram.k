@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Change password
     if (isset($_POST['update_password'])) {
-        $new_password = trim($_POST['new_password']);
+        $new_password = md5(trim($_POST['new_password']));
         if (!empty($new_password)) {
             $query = $conn->prepare("UPDATE users SET password=? WHERE id=?");
             $query->bind_param("si", $new_password, $user_id);
