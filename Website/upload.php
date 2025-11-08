@@ -29,9 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['uploaded_file'])) {
 
     // Move uploaded file
     if (move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $targetFile)) {
-        echo "✅ File uploaded successfully: " . htmlspecialchars($fileName);
+        echo " File uploaded successfully: " . htmlspecialchars($fileName);
     } else {
-        echo "❌ Error uploading file.";
+        echo " Error uploading file.";
     }
 } else {
     echo "No file uploaded.";
