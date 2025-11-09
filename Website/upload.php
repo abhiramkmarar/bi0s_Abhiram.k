@@ -1,41 +1,46 @@
 <?php
 session_start();
-
+include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
     die("Access denied. Please log in first.");
 }
 
-$targetDir = "uploads/"; 
-if (!is_dir($targetDir)) {
-    mkdir($targetDir, 0777, true);
-}
+$user_id = $_SESSION['user_id'];
+$targetDir = "uploads/";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['uploaded_file'])) {
     $fileName = basename($_FILES['uploaded_file']['name']);
-    $targetFile = $targetDir . $fileName;
-
-    // Limit (2MB)
-    if ($_FILES['uploaded_file']['size'] > 2 * 1024 * 1024) {
-        die("Error: File too large. Max size is 2MB.");
-    }
-
-    //safe extensions
-    $allowed = ['jpg', 'jpeg', 'png', 'pdf', 'txt'];
     $ext = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+    // safe file types
+    $allowed = ['jpg', 'jpeg', 'png', 'pdf', 'txt'];
     if (!in_array($ext, $allowed)) {
-        die("Error: Only JPG, PNG, PDF, and TXT files allowed.");
+        die("Error: Only JPG, PNG, PDF, or TXT files allowed.");
     }
 
-    // Move uploaded file
+    // 2MB
+    if ($_FILES['uploaded_file']['size'] > 2 * 1024 * 1024) {
+        die("Error: File too large (max 2MB).");
+    }
+
+    // unique file name 
+    $newFileName = "user_" . $user_id . "_" . time() . "." . $ext;
+    $targetFile = $targetDir . $newFileName;
+
+    // Move the uploaded file
     if (move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $targetFile)) {
-        echo " File uploaded successfully: " . htmlspecialchars($fileName);
+        // database connection
+        $stmt = $conn->prepare("UPDATE users SET profile_picture_path=? WHERE id=?");
+        $stmt->bind_param("si", $targetFile, $user_id);
+        $stmt->execute();
+
+        echo " File uploaded successfully.<br>";
+        echo "<a href='profile.php'>Back to Profile</a>";
     } else {
         echo " Error uploading file.";
     }
 } else {
     echo "No file uploaded.";
 }
-
-<a href='profile.php'>Profile</a> 
 ?>
