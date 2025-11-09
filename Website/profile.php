@@ -48,6 +48,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h2>Welcome <?php echo htmlspecialchars($user['username']); ?>!</h2>
+    <?php
+if (!empty($user['profile_picture_path']) && file_exists($user['profile_picture_path'])) {
+    echo "<img src='" . htmlspecialchars($user['profile_picture_path']) . "' alt='Profile Picture' width='150' height='150' style='border-radius:50%;'><br><br>";
+} else {
+    echo "<img src='default.png' alt='No Profile Picture' width='150' height='150' style='border-radius:50%;'><br><br>";
+}
+?>
     <p>Your role is: <b><?php echo htmlspecialchars($user['role']); ?></b></p>
     <a href="logout.php">Logout</a>
 
