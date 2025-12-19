@@ -1,0 +1,23 @@
+level 0-1
+in the page's source code the password is present as a comment 
+0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
+
+level 1-2
+ctrl-u can be used to view source code
+TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI 
+
+level 2-3
+in source code "<img src="files/pixel.png">"
+enter the internal files by ading the extension /files/
+inside the directory get the password
+3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+security (server-side) misconfiguration
+
+level 3-4
+robots.txt - public file
+it allows the user to guide the search engine bots to wich area it can acses and which area not to
+inside /robots.txt/ it shows which path to block (/s3crt)
+inside this you'll find the password
+QryZXc2e0zahULdHrtHxzyYkj59kUxLQ
+
+level 4-5
