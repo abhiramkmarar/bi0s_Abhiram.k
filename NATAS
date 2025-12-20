@@ -25,3 +25,42 @@ This shows broken access control
 referer tells the server where the request comes from 
 change it as instructed and get the password
 0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+
+level 5-6
+cookie is used for authentication 
+here if cookie value is changed then access is granted 
+security misconfiguration
+authentication-verify identity and authorization verify permission 
+0RoJwHdSKWFTYR5WuiAewauSuNaBXned
+
+level 6-7
+The passwords are stored in paths accesable through web
+(included file is directley accesible over http)
+cryptographic failure
+bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
+
+level 7-8
+thr file is included without sanitization
+user can unclude the file path and get the file
+parameter was controlled
+sqli
+xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q
+
+level 8-9
+the page source showed a code which had been encoded
+cryptographic failure
+ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
+
+level 9-10
+; - command separator
+; cat /etc/natas_webpass/natas10
+grep -i becomes invalid 
+use escapeshellarg(prevents command chaining
+injection
+t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+
+level 10-11
+same sinario all charectees aare not sanitized
+.* /etc/natas_webpass/natas11
+.* can be used
+UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
