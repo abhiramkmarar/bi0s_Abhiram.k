@@ -64,3 +64,26 @@ same sinario all charectees aare not sanitized
 .* /etc/natas_webpass/natas11
 .* can be used
 UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
+
+level 11-12
+level said cookie is protected using xor
+url decode from base64 you get the cipher 
+the clear text is {"showpassword":"no","bgcolor":"#ffffff"}
+xor and encode using cyber chef
+yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB
+
+level 12-13
+HTTP trafic could be modified 
+php command was added to retrive the password
+trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC
+
+level 13-14
+
+z3UYcr4v4uBpeX8f7EZbMHlzK4UR2XtQ
+
+level 14-15
+basic sql injection
+" " OR 1=1 --"
+SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
+
+level 15-16
