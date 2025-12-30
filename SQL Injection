@@ -1,0 +1,5 @@
+SELECT * FROM v$version :  query the version details for the database
+SELECT * FROM information_schema.tables : identify what database tables exist, and the columns they contain
+order by {number} - check how many columns are returned
+UNION SELECT banner , banner from v$version-- version in oracle
+UNION SELECT @@version - version in microsoft
