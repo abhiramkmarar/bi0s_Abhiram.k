@@ -1,0 +1,33 @@
+1.select * from details
+pwn.college{I_7JbgQ8yewVZsAZb--4y2aRTTg.0VO5cDNxwyN0UTN0EzW}
+
+2.SELECT secret FROM fragments WHERE flag_tag=1337
+pwn.college{8S5D0mrXMUYvn2mMeeebMZPKMHR.0FMwgDNxwyN0UTN0EzW}
+
+3.SELECT record FROM data WHERE flag_tag=1337
+pwn.college{clOqd4tshhgxu3sSxjt_DybVax_.0VMwgDNxwyN0UTN0EzW}
+
+4.SELECT resource FROM flags WHERE flag_tag !=1
+pwn.college{QuPg7lhmkMksQXvoBd57sECsHIT.0lMwgDNxwyN0UTN0EzW}
+
+5.SELECT flag FROM payloads WHERE flag_tag="yep"
+pwn.college{4b8J8pMZCs1-ZFIxaFTBmedALvy.01MwgDNxwyN0UTN0EzW}
+
+6.SELECT content FROM secrets WHERE substr(content,1,2)="pw"
+pwn.college{crzdr_sd89AoRi8vmoe08BxgrQi.0FNwgDNxwyN0UTN0EzW}
+
+7.SELECT substr(item,1,5) FROM logs WHERE substr(item,1,2)="pw"
+pwn.college{U5IcQ3Rwd0GsqlzumWiNZcrD_b9.0VNwgDNxwyN0UTN0EzW}
+
+8.SELECT info FROM logs WHERE flag_tag=1337 AND substr(info,1,2)="pw"
+pwn.college{E4f1HQ6hYi5u1cclEsJ3uh6VwAR.0lNwgDNxwyN0UTN0EzW}
+
+9.SELECT field FROM notes WHERE substr(field,1,2) ="pw" LIMIT 1
+pwn.college{kAn3BD28oxwuhUZZlU4k2AtctR8.01NwgDNxwyN0UTN0EzW}
+
+10.SELECT name FROM sqlite_master WHERE type='table';
+   SELECT note FROM egsD0zko
+pwn.college{8MCiJPDjk6M_T0Z-5qsYtYDVaIQ.0FOwgDNxwyN0UTN0EzW}
+
+
+
