@@ -103,11 +103,7 @@ Running containers:
 
 A network allowing containers to communicate using service names.
 
-Example:
 
-```php
-$conn = new mysqli('user-system-db', 'phpuser', 'password', 'user_system');
-```
 
 ---
 
