@@ -60,7 +60,7 @@ user-system-docker/
 
 ---
 
-## 🧪 Database 
+##  Database 
 
  `users` table structure:
 
@@ -75,7 +75,7 @@ user-system-docker/
 
 ---
 
-## ⚙️ Docker Components Explained
+##  Docker Components Explained
 
 ### 1️ Docker Image
 
@@ -113,7 +113,7 @@ $conn = new mysqli('user-system-db', 'phpuser', 'password', 'user_system');
 
 ### 4️ Docker Volume
 
-Used to persist MySQL data so it is not lost when containers stop or restart.
+Used to keep MySQL data so it is not lost when containers stop or restart.
 
 ---
 
