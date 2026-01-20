@@ -175,7 +175,17 @@ Common pentesting use cases:
 | High resource usage  | Efficient          |
 
 ---
+## codes
 
+| Action          | With Docker            |
+| --------------- | ---------------------- |
+| Start website   | `docker-compose up -d` |
+| Start database  | `docker-compose up -d` |
+| Stop website/db | `docker-compose down`  |
+| Check status    | `docker ps`            |
+                   
+
+---
 ## Points
 
 * Docker packages applications and dependencies together
