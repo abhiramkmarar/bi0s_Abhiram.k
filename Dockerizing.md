@@ -168,10 +168,10 @@ Common pentesting use cases:
 ##  VM vs Docker Container
 
 | Virtual Machine     |  Docker Container   |
-----------------------  --------------------
+---------------------- --------------------
 | Heavy                | Lightweight        |
 | Own OS               | Shares host kernel |
-| Slow startup         | Quick startup    |
+| Slow startup         | Quick startup      |
 | High resource usage  | Efficient          |
 
 ---
