@@ -152,7 +152,7 @@ http://localhost:8080
 
 ---
 
-## 🛡️ Security & Pentesting Relevance
+##  Security & Pentesting Relevance
 
 This setup is useful for:
 
@@ -169,7 +169,7 @@ Common pentesting use cases:
 
 ---
 
-## 🆚 VM vs Docker Container
+##  VM vs Docker Container
 
 | Virtual Machine     | Docker Container   |
 
