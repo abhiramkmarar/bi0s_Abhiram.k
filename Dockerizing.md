@@ -16,7 +16,7 @@ User Browser
      
 Host Machine (Port 8080)
      |
-     v
+     
 
  PHP Web Container     
  (user-system-web)     
@@ -167,12 +167,12 @@ Common pentesting use cases:
 
 ##  VM vs Docker Container
 
-| Virtual Machine     | Docker Container   |
-
- Heavy                Lightweight        
- Own OS               Shares host kernel 
- Slow startup         Instant startup    
- High resource usage  Efficient          
+| Virtual Machine     |  Docker Container   |
+----------------------  --------------------
+| Heavy                | Lightweight        |
+| Own OS               | Shares host kernel |
+| Slow startup         | Quick startup    |
+| High resource usage  | Efficient          |
 
 ---
 
@@ -180,7 +180,6 @@ Common pentesting use cases:
 
 * Docker packages applications and dependencies together
 * Containers are isolated but lightweight
-* Docker Compose simplifies multi-container orchestration
 * Volumes ensure data persistence
 * Ideal for development, deployment, and security testing
 
