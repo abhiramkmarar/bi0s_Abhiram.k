@@ -277,6 +277,7 @@ namashivaya "UNION ALL select 1,2 FROM INFORMATION_SCHEMA.columns WHERE table_na
 namashivaya" UNION ALL SELECT 1,2 FROM users WHERE username = "natas16" AND BINARY substring(password,1,1) = "a" LIMIT 1 ;#
 ```
 * limit-Return only one row prevent extra result and error
+* 
 **Password:**
 
 ```
