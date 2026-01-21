@@ -25,8 +25,7 @@ Host Machine (Port 8080)
             │ Docker Network
 
  MySQL Container       
- (user-system-db)      
- Port: 3306           
+ (user-system-db)                
 
             │
         Docker Volume
@@ -80,7 +79,6 @@ user-system-docker/
 ### 1️ Docker Image
 
 A **Docker image** is a read-only blueprint used to create containers.
-When run it makes a container
 
 Images used:
 
@@ -125,7 +123,7 @@ docker-compose up -d
 
 ---
 
-## How to Run the Project
+## How to Run 
 
 ### Prerequisites
 
@@ -135,9 +133,6 @@ docker-compose up -d
 ### Steps
 
 ```
-# Clone the repository
-git clone <repo-url>
-cd user-system-docker
 
 # Start containers
 docker-compose up -d
@@ -168,7 +163,7 @@ Common pentesting use cases:
 ##  VM vs Docker Container
 
 | Virtual Machine     |  Docker Container   |
----------------------- --------------------
+|---------------------- --------------------|
 | Heavy                | Lightweight        |
 | Own OS               | Shares host kernel |
 | Slow startup         | Quick startup      |
