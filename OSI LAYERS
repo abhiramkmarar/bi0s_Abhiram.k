@@ -1,0 +1,21 @@
+1.APPLICATION LAYER:
+      Raw data is sent through socket
+      socket-(ip+port)
+2.PRESNTATIONN LAYER:
+      Encryption , compression happens
+      tls
+3.SESSION LAYER:
+      Establishes session b/w client and server
+      Handshaking, 
+4.TRANSPORTATION LAYER:
+      TCP , UDP
+      Breaks into segments
+5.NETWORKING LAYER:
+      Wraps transport layer segment inside an IP packet
+      Adds- source ip, destination ip,protocol mentioned(tcp, udp)
+      route is decided(router/gateway)
+6.DATA LINK LYAER:
+      Header is added (source MAC, Destionation MAC)
+7.PHYSICAL LAYER:
+      Frmaes are converted into bits/signals
+      Done by NIC (through Ethernet,Fiber,Wifi)
