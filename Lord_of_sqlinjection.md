@@ -62,7 +62,8 @@ select id from prob_orc where id='admin' and pw='' or id="admin"and length(pw)=8
 select id from prob_orc where id='admin' and pw='095a9852'
 ```
 
-(PICTURE)
+<img width="1032" height="285" alt="image" src="https://github.com/user-attachments/assets/da672563-2c60-49eb-aea3-3620d55667eb" />
+
 
 ---
 
