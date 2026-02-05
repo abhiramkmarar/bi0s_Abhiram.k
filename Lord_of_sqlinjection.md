@@ -246,6 +246,8 @@ https://los.rubiya.kr/chall/giant_18a08c3be1d1753de0cb157703f75a5e.php?shit=%0B
 
 
 In SQL, the percent sign (%) is the wildcard character used to represent zero, one, or multiple characters in a string search
+LIKE wildcard allows prefix matching, enabling partial password guessing
+90 is common for guest and admin , 902 is unique for admin \
 
 ```
 https://los.rubiya.kr/chall/assassin_14a1fd552c61c60f034879e5d4171373.php?pw=902%
