@@ -71,6 +71,7 @@ It forbade whitespace, so we used url encoded tab (%09)
 ```
 https://los.rubiya.kr/chall/wolfman_4fdc56b75971e41981e3d1e2fbe9b7f7.php?pw=%27%09or%09id%09=%27admin%27--%09-
 ```
+[Visit the page](https://los.rubiya.kr/chall/wolfman_4fdc56b75971e41981e3d1e2fbe9b7f7.php?pw=%27%09or%09id%09=%27admin%27--%09-)
 
 **query :**
 ```
