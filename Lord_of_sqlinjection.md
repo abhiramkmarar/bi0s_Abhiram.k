@@ -244,12 +244,14 @@ https://los.rubiya.kr/chall/giant_18a08c3be1d1753de0cb157703f75a5e.php?shit=%0B
 
 <img width="940" height="835" alt="image" src="https://github.com/user-attachments/assets/995eada1-f952-45f8-a41a-b174643ac9e3" />
 
-
+The database table contains rows of users (e.g., guest at row 1, admin at row 2, etc.)
+When using tools or writing queries to find the admin, it's essentially asking the database to perform an ordered search (like ORDER BY id)
+ Because "Hello guest" appears, the query successfully retrieved the guest row, confirming that the guest user row exists at a lower index
 In SQL, the percent sign (%) is the wildcard character used to represent zero, one, or multiple characters in a string search
 LIKE wildcard allows prefix matching, enabling partial password guessing
 90 is common for guest and admin , 902 is unique for admin \
 
-```
+```url
 https://los.rubiya.kr/chall/assassin_14a1fd552c61c60f034879e5d4171373.php?pw=902%
 ```
 
