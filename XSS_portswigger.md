@@ -49,3 +49,7 @@
 
 - An iframe (inline frame) is an HTML element that embeds another HTML document inside the current webpage, essentially creating a "webpage within a webpage".  
 - Represented by the `<iframe>` tag, it is commonly used to embed interactive content like YouTube videos, Google Maps, advertisements, and external widgets without reloading the main page.
+
+```html
+<iframe src ="https://0a8c009d03bf48218034030000600013.web-security-academy.net/?search=%22%3E%3Cbody%20onresize=print()%3E" onload=this.style.width='100px'>
+```
