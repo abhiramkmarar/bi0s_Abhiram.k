@@ -243,7 +243,20 @@ https://los.rubiya.kr/chall/giant_18a08c3be1d1753de0cb157703f75a5e.php?shit=%0B
 
 ## 15. Assasin
 
-<img width="940" height="835" alt="image" src="https://github.com/user-attachments/assets/995eada1-f952-45f8-a41a-b174643ac9e3" />
+the percent sign (%) is the wildcard character used to represent any and all characters 
+when used with the LIKE operator. 
+'abc%': Finds any values that start with "abc".
+'%abc': Finds any values that end with "abc".
+'%abc%': Finds any values that have "abc" in any position. 
+
+
+```wildcards``` are special charecters used withlike to perform pattern based search
+
+% (Percent sign): Represents zero, one, or multiple characters.
+
+_ (Underscore): Represents exactly one single character.
+
+[] (Square brackets, primarily SQL Server/MS Access): Matches any single character within the specified set or range.
 
 The database table contains rows of users (e.g., guest at row 1, admin at row 2, etc.)
 
