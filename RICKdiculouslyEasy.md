@@ -247,4 +247,19 @@ checked port 9090 and found a flag on the web page.
 FLAG {There is no Zeus, in your face!}
 ```
 
-now we h
+## 13337
+<img width="729" height="129" alt="image" src="https://github.com/user-attachments/assets/bbce58d1-fb97-4391-a41f-0bfbe373b66b" />
+
+```
+FLAG:{TheyFoundMyBackDoorMorty}
+```
+<!--  nc : It  can  open  TCP  connections, send UDP packets, listen on arbitrary TCP and UDP ports, do port scanning -->
+
+## 60000
+
+<img width="694" height="185" alt="image" src="https://github.com/user-attachments/assets/5bb728a8-427c-4a0f-873b-97d271e8783a" />
+
+if we notice it shows "#" insted of the usual "$" this means that we have root accsess 
+```
+FLAG{Flip the pickle Morty!}
+```
