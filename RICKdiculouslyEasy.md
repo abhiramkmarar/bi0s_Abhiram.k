@@ -12,7 +12,7 @@ since we dont know what the ip adress is, we have to find it
 ip a
 ```
 
-IPADRESS : 192.168.56.102  
+IPADRESS : 192.168.56.101
 
 now we have to know which all ports are open and avalable  
 
