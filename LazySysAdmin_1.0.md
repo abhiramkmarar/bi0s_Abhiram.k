@@ -2,17 +2,28 @@
 <img width="1330" height="690" alt="image" src="https://github.com/user-attachments/assets/52b15fb0-a740-440b-b0f8-5ee8f43bedb3" />
 Ports 139 and 445 (Samba/SMB): These ports are used for file and printer sharing via the Server Message Block (SMB) protocol.
 Port 139 handles SMB over the legacy NetBIOS session service.
+
 Port 445 is used for modern, Direct Host SMB over TCP/IP.
+
+
 CTF Tip: On this specific machine, you can often use smbclient to access shared directories anonymously to find sensitive files like deets.txt.
+
+
 SMB (Server Message Block) is an application-layer network protocol used primarily for providing shared access to files, printers.
+
+
 NetBIOS (Network Basic Input/Output System) is a legacy session-layer API (Application Programming Interface) that allows applications
 on separate computers to communicate over a Local Area Network (LAN)
+
+
 The client requests access to a specific shared resource (a "tree") on the server
 ```bash
 smbclient -L //SERVER-IP -U username
 ```
 <img width="1330" height="690" alt="image" src="https://github.com/user-attachments/assets/3906b475-6c9d-489e-a9a1-932202fdee70" />
+
 smbclient is a tool from the Samba suite that lets Linux interact with Windows-style SMB file shares.
+
 -L → List available shares
 
 //192.168.56.104 → target machine
