@@ -94,7 +94,7 @@ sudo nmap -sC -sV -v -A -O -Pn -oN initial <IP>
 ### Open Ports
 
 ```
-21 → FTP
+21  FTP
 22  SSH
 80  HTTP
 ```
