@@ -1,9 +1,9 @@
 # SickOS 1.2 – VulnHub Walkthrough
 
 Target: SickOS 1.2  
-Attacker Machine: Ubuntu/Kali  
 Adapter: VirtualBox (Host-Only Network)
 
+**Vulnerability: Insecure HTTP Methods (PUT) and a vulnerable Cron Job (chkrootkit).**
 ---
 
 # 1. Initial Enumeration
