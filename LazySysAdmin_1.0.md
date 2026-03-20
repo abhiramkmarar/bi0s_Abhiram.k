@@ -3,7 +3,7 @@
 Target: LazySysAdmin (VulnHub VM)  
 Attacker Machine: Ubuntu/Kali  
 Platform: VirtualBox (Host-Only Network)
-
+**Vulnerability: Information Leakage via SMB and Password Reuse.**
 ---
 
 # 1. Network Discovery
