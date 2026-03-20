@@ -3,6 +3,7 @@
 Target: SickOs (VulnHub VM)  
 Platform: VirtualBox (Host-Only Networking)  
 
+**Vulnerability: file upload **
 ---
 
 ## Network
