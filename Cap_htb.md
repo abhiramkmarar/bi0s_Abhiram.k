@@ -323,8 +323,3 @@ VPN Connection
 - Always inspect traffic files  
 
 ---
-
-### 4. Linux Capabilities Misconfiguration
-
-- Fine-grained privilege system  
-- Misuse can lead to full root compromise  
