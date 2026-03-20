@@ -4,6 +4,7 @@ Target: Dian (VulnHub VM)
 Attacker Machine: Ubuntu/Kali  
 Platform: VirtualBox (Host-Only Network)
 
+**Vulnerability: Information Disclosure in source code and Unrestricted File Upload in PlaySMS.**
 ---
 
 # 1. Network Discovery
