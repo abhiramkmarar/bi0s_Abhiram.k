@@ -1,5 +1,7 @@
 # Target Machine : RICKdiculouslyEasy
 
+**Vulnerability: Multiple misconfigurations including Anonymous FTP login, weak credentials, and insecure services.**
+
 ---
 
 ## Network Setup
