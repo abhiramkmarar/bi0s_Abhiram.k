@@ -1,4 +1,8 @@
 ## NullByte
+
+**Vulnerability: Steganography, SQL Injection, and PATH Manipulation.**
+
+
 find the ip adress
 
 <img width="668" height="501" alt="image" src="https://github.com/user-attachments/assets/76ab5fc0-0f46-4ba9-a4a5-2a1d6b387719" />
