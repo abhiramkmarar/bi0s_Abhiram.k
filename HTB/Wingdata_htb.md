@@ -211,7 +211,7 @@ So now it behaves like:
 
 “I’m a valid user, trust me.”
 
-#### 4. Injects your command
+#### 4. Injects your command.
 
 It sends your payload inside a parameter to a vulnerable endpoint.
 
