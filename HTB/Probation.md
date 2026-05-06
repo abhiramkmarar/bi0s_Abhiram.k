@@ -192,14 +192,25 @@ RCE requires:
 
 <img width="947" height="515" alt="image" src="https://github.com/user-attachments/assets/37ebc71d-05e5-42df-9f23-2141f8b838f4" />
 
-## 19. Key Insight
+## 19. Why This Leads to Command Execution
 
-Path traversal - gives access  
-CGI - gives execution  
+### Traversal Bypass
+The request uses encoded traversal sequences (like `.%2e/`) to escape the web root.  
+Due to improper path normalization in Apache 2.4.49, these bypass access control checks.
 
-Together - RCE
+### Reaching an Executable
+The traversal resolves to `/bin/sh`, which is the system shell (an executable program used to run commands).
 
----
+### CGI Handling
+The `/cgi-bin/` path is configured for CGI (**Common Gateway Interface**).  
+CGI tells Apache to treat the target as a program and execute it instead of serving it as a file.
+
+### Command Injection via Request Body
+The shell interprets input like `echo; id` as commands and executes them.
+
+### Response Returned
+The output of the executed command is sent back to the client as part of the HTTP response.
+
 
 ## 20. Security Issue
 
