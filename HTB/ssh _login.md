@@ -1,10 +1,9 @@
 # SSH through keygen
 
-Follow these steps in exact order to transition from your active reverse shell to a stable, passwordless SSH session.
 
 ---
 
-## Step 1: On Your Local Machine (Your VirtualBox)
+## Step 1: On Your Local Machine 
 Ensure your local private key file has the correct secure file permissions required by SSH.
 
 1. **Set secure permissions** on your private key:
